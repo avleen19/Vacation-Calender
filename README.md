@@ -1,4 +1,4 @@
-Vacation Calendar
+## Vacation Calendar 
 
 A web application to visualize holidays and vacations by week.  
 Weeks with multiple holidays are highlighted in **dark green**, and weeks with a single holiday in **light green**. Users can select different countries to view holiday data dynamically.
