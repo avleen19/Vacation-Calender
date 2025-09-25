@@ -1,0 +1,169 @@
+:root {
+  --light-green: #a9eba9;
+  --dark-green: #0b6623;
+  --bg-color: #e4e6e8;
+  --text-color: #111827;
+  --card-shadow: rgba(0, 0, 0, 0.08);
+  --border-color: #989ba3;
+  --transition-speed: 0.3s;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* modern font */
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+/* Center the Vacation Calendar heading */
+header h1,
+.vacation-container h1 {
+  text-align: center;
+  width: 100%;
+  margin: 10px 0 20px 0;
+  font-size: 2rem; /* slightly larger heading */
+  font-weight: 700;
+  color: #0b6623; /* match dark-green for emphasis */
+  letter-spacing: 0.5px;
+}
+
+.vacation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+  background-color: #f5f2f2;
+  padding: 28px 24px; /* slightly more padding for elegance */
+  border-radius: 12px;
+  box-shadow: 0 6px 20px var(--card-shadow);
+  transition: transform var(--transition-speed);
+}
+
+.vacation-container:hover {
+  transform: translateY(-3px);
+}
+
+.controls {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 24px; /* a bit more spacing */
+}
+
+.controls select {
+  padding: 8px 14px; /* slightly bigger */
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: #f9fafb;
+  cursor: pointer;
+  transition: background-color var(--transition-speed), border-color var(--transition-speed), transform 0.2s;
+}
+
+.controls select:hover {
+  background-color: #eef6ef;
+  border-color: var(--dark-green);
+  transform: scale(1.05); /* subtle hover effect */
+}
+
+.week-light {
+  background-color: var(--light-green) !important;
+  color: #0f3d0f !important;
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 5px 8px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.week-dark {
+  background-color: var(--dark-green) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 5px 8px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.holiday-list {
+  margin-top: 28px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 16px;
+  width: 100%;
+}
+
+.holiday-list h2 {
+  text-align: center;
+  font-weight: 600;
+  color: #0b6623;
+  margin-bottom: 16px;
+  letter-spacing: 0.3px;
+}
+
+.holiday-list ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.holiday-list li {
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color var(--transition-speed), transform 0.2s;
+}
+
+.holiday-list li:last-child {
+  border-bottom: none;
+}
+
+.holiday-list li:hover {
+  background-color: #f1fdf1;
+  border-radius: 6px;
+  padding-left: 8px;
+  transform: translateX(2px); /* subtle hover effect */
+}
+
+/* FullCalendar buttons */
+.fc .fc-button {
+  padding: 6px 14px;
+  margin-left: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #f9fafb;
+  cursor: pointer;
+  transition: none;
+  color: #111827;
+  font-weight: 500;
+}
+
+.fc .fc-button:hover {
+  background-color: #f9fafb;
+  border-color: #ccc;
+  color: #111827;
+}
+
+.fc .fc-button.fc-button-active {
+  background-color: #0b6623;
+  color: #fff;
+  border-color: #0b6623;
+  font-weight: 600;
+}
+
+/* Center the calendar table inside the container */
+.fc {
+  width: 100% !important;
+  max-width: 1000px;
+}
+.fc .fc-scrollgrid {
+  margin: 0 auto;
+}
